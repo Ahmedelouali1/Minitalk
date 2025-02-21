@@ -38,3 +38,8 @@ ghadi ghir nzido i 7it wslatna bit akhra
         i++;
     }
 }
+
+
+if (pid <= 1)
+    return (1);
+    what happens if you give kill function pid 0 or 1 or negative value ?

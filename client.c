@@ -103,6 +103,7 @@ int main(int argc, char *argv[])
     if (check_pid(argv[1]) == 0)
         return (1);
     pid = ft_atoi(argv[1]);
+    if (pid <= 1)
+        return(1);
     send_msg(argv[2], pid);
-
 }
