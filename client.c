@@ -1,6 +1,37 @@
 #include "minitalk.h"
 #include <stdio.h>
 
+int ft_strlen(char *str)
+{
+	int i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
+
+int	ft_atoi(const char *nptr)
+{
+	int	signe;
+	int	result;
+
+	while (*nptr == ' ' || (*nptr >= 9 && *nptr <= 13))
+		nptr++;
+	signe = 1;
+	result = 0;
+	if (*nptr == '-')
+		signe *= -1;
+	if (*nptr == '+' || *nptr == '-')
+		nptr++;
+	while (*nptr >= '0' && *nptr <= '9')
+	{
+		result = result * 10 + (*nptr - '0');
+		nptr++;
+	}
+	return (result * signe);
+}
+
 int check_pid(char *s)
 {
     int i;
@@ -32,6 +63,7 @@ int send_char(char c, int pid)
             {
                 return(0);
             }
+            usleep(3000);
         }
         if (c % 2 == 0)
         {
@@ -39,6 +71,7 @@ int send_char(char c, int pid)
             {
                 return (0);
             }
+            usleep(3000);
         }
         c /= 2;
         i++;

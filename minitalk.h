@@ -3,6 +3,7 @@
 # include <unistd.h>
 #include <stdlib.h>
 #include <signal.h>
+#include <sys/types.h>
 
 int ft_atoi(const char *nptr);
 int ft_strlen(char *str);
