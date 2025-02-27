@@ -1,61 +1,73 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   server.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahmel-ou <ahmel-ou@student.42barcelona.    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/27 13:43:15 by ahmel-ou          #+#    #+#             */
+/*   Updated: 2025/02/27 13:43:25 by ahmel-ou         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minitalk.h"
 #include <stdio.h>
 
-void ft_putnbr(int nb)
+void	ft_putnbr(int nb)
 {
-	char d;
+	char	d;
+
 	if (nb >= 10)
 		ft_putnbr(nb / 10);
 	d = (nb % 10) + '0';
 	write(1, &d, 1);
 }
 
-void sig_handler(int sig, siginfo_t *info, void *p)
+void	sig_handler(int sig, siginfo_t *info, void *p)
 {
-    static int i;
-    static char c;
-    static int o_pid;
-    int arr[8] = {1, 2, 4, 8, 16, 32, 64, 128};
+	static int	i;
+	static char	c;
+	static int	o_pid;
+	int			arr[8] = {1, 2, 4, 8, 16, 32, 64, 128};
 
-    if (o_pid != 0 && info->si_pid != o_pid)
-    {
-        i = 0;
-        c = 0;
-    }
-    o_pid = info->si_pid;
-    if (sig == SIGUSR1)
-    {
-        c += arr[i];
-        i++;
-    }
-    if (sig == SIGUSR2)
-    {
-        i++;
-    }
-    if (i == 8)
-    {
-        write(1, &c, 1);
-        c = 0;
-        i = 0;
-    }
+	if (p)
+		p = NULL;
+	if (o_pid != 0 && info->si_pid != o_pid)
+	{
+		i = 0;
+		c = 0;
+	}
+	o_pid = info->si_pid;
+	if (sig == SIGUSR1)
+	{
+		c += arr[i];
+		i++;
+	}
+	if (sig == SIGUSR2)
+	{
+		i++;
+	}
+	if (i == 8)
+	{
+		write(1, &c, 1);
+		c = 0;
+		i = 0;
+	}
 }
-
-int main()
+int	main(void)
 {
-    pid_t pid;
-    struct sigaction data;
-    data.sa_flags = SA_SIGINFO;
-    data.sa_sigaction = sig_handler;
-    if (sigaction(SIGUSR2, &data, NULL) == -1)
-        return (1);    
-    if (sigaction(SIGUSR1, &data, NULL) == -1)
-        return (1);
-    pid = getpid();
-    ft_putnbr(pid);
-    write(1, "\n", 1);
-    while (1)
-    { 
-        pause();
-    }
+	pid_t				pid;
+	struct sigaction	data;
 
+	data.sa_flags = SA_SIGINFO;
+	data.sa_sigaction = sig_handler;
+	if (sigaction(SIGUSR2, &data, NULL) == -1)
+		return (1);
+	if (sigaction(SIGUSR1, &data, NULL) == -1)
+		return (1);
+	pid = getpid();
+	ft_putnbr(pid);
+	write(1, "\n", 1);
+	while (1)
+		pause();
 }
