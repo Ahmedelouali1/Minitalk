@@ -6,7 +6,7 @@
 /*   By: ahmel-ou <ahmel-ou@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 13:43:31 by ahmel-ou          #+#    #+#             */
-/*   Updated: 2025/02/27 13:48:35 by ahmel-ou         ###   ########.fr       */
+/*   Updated: 2025/02/27 14:03:09 by ahmel-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	check_pid(char *s)
 	return (1);
 }
 
-int send_char(char c, int pid)
+int	send_char(char c, int pid)
 {
 	int	i;
 
@@ -79,7 +79,7 @@ int	send_msg(char *str, int pid)
 
 int	main(int argc, char *argv[])
 {
-	int pid;
+	int	pid;
 
 	if (argc != 3)
 		return (1);
@@ -88,5 +88,5 @@ int	main(int argc, char *argv[])
 	pid = ft_atoi(argv[1]);
 	if (pid <= 1)
 		return (1);
-    send_msg(argv[2], pid);
+	send_msg(argv[2], pid);
 }

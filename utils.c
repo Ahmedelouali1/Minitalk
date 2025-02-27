@@ -6,7 +6,7 @@
 /*   By: ahmel-ou <ahmel-ou@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 13:43:40 by ahmel-ou          #+#    #+#             */
-/*   Updated: 2025/02/27 13:43:41 by ahmel-ou         ###   ########.fr       */
+/*   Updated: 2025/02/27 15:10:52 by ahmel-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ int	ft_strlen(char *str)
 
 int	ft_atoi(const char *nptr)
 {
-	int signe;
-	int result;
+	int	signe;
+	int	result;
 
 	while (*nptr == ' ' || (*nptr >= 9 && *nptr <= 13))
 		nptr++;

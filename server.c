@@ -6,7 +6,7 @@
 /*   By: ahmel-ou <ahmel-ou@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 13:43:15 by ahmel-ou          #+#    #+#             */
-/*   Updated: 2025/02/27 13:43:25 by ahmel-ou         ###   ########.fr       */
+/*   Updated: 2025/02/27 15:10:06 by ahmel-ou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,37 +23,55 @@ void	ft_putnbr(int nb)
 	write(1, &d, 1);
 }
 
+int	*assign_value(void)
+{
+	int	*arr;
+	int	i;
+
+	i = 0;
+	arr = (int *)malloc(sizeof(int) * 8);
+	if (!arr)
+		return (NULL);
+	while (i < 8)
+	{
+		arr[i] = 1 << i;
+		i++;
+	}
+	return (arr);
+}
+
+void	ft_reset(int *i, char *c)
+{
+	*i = 0;
+	*c = 0;
+}
+
 void	sig_handler(int sig, siginfo_t *info, void *p)
 {
 	static int	i;
 	static char	c;
 	static int	o_pid;
-	int			arr[8] = {1, 2, 4, 8, 16, 32, 64, 128};
+	int			*arr;
 
+	arr = assign_value();
+	if (!arr)
+		return ;
 	if (p)
 		p = NULL;
 	if (o_pid != 0 && info->si_pid != o_pid)
-	{
-		i = 0;
-		c = 0;
-	}
+		ft_reset(&i, &c);
 	o_pid = info->si_pid;
 	if (sig == SIGUSR1)
-	{
 		c += arr[i];
-		i++;
-	}
-	if (sig == SIGUSR2)
-	{
-		i++;
-	}
+	i++;
 	if (i == 8)
 	{
 		write(1, &c, 1);
-		c = 0;
-		i = 0;
+		ft_reset(&i, &c);
 	}
+	free(arr);
 }
+
 int	main(void)
 {
 	pid_t				pid;
