@@ -1,7 +1,6 @@
 #ifndef MINITALK_H
 # define MINITALK_H
 
-# include <bits/sigaction.h>
 # include <signal.h>
 # include <stdlib.h>
 # include <sys/types.h>
