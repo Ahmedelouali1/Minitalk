@@ -48,6 +48,7 @@ nafs l3iba ta f sigaction lfar9 binathom hwa anaho sigaction kt3tik info ktar , 
 3lach ghatfidk f minitalk 7itach nta ktsendi f client sigusr1 o sigusr2 wlkin la siftihom l process ghadi ghi ytkila o safi nta baghi thandlihom bach mni ywslk sig1 z3ma rah sift lik bit0 o la kant sig2 ra sift lik bit 1
 
 signal and sigaction?
+
     signal basic function bach thandli lbehavior d process mni yreceivi signal , sigaction kadir nafs l 7aja wlkin kt3tik more info 3la chkon li sift lik signal chnahwa pid dyalo ....)
 
 why we use usleep?
