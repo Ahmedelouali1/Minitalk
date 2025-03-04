@@ -12,6 +12,7 @@ Difference Between SIGUSR1 and SIGUSR2
     lfar9  hwa lokkhrin kyts3mlhom  system o kola w7da defined l wa7d l7aja (sig int hya interrupt sig stop ktstopi process ...) wlkin sigusr 1 o 2 mkyst3mlhomch system home mdyorin l user bach yst3mlhom kima bgha.
 
 check_pid katchecki lina wach kayna gha + w7da o ila kan mn b3d dik + \0 y3ni ra kayna + bo7dha which is invalid o mn b3d tantchekiw wach kayn ar9am wla la 
+
 Input: +abc       --> Invalid
 
 Input: +1223      --> Valid
@@ -31,6 +32,7 @@ Input: ++89       --> Invalid
 Input: 123        --> Valid
 
 nisanfdan invalid
+
 sf
 send_msg kador 3la string o katsift char by char b send_char
 send_char kat7wal lina mn decimal lbinnary
