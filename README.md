@@ -1,3 +1,7 @@
+What is signals?
+
+its a way of communicationg between processes  especially betweeen the kernel and other processes to notify them with an event
+
 pid howa li haz lina process id dyal li ghansifto lih lmsg
 check_pid katchecki lina wach kayna gha + w7da o ila kan mn b3d dik + \0 y3ni ra kayna + bo7dha which is invalid o mn b3d tantchekiw wach kayn ar9am wla la 
 + invalid 
