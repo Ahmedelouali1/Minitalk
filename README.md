@@ -1,6 +1,6 @@
 What is signals?
 
-its a way of communicationg between processes  especially betweeen the kernel and other processes to notify them with an event
+  its a way of communicationg between processes  especially betweeen the kernel and other processes to notify them with an event
 
 pid?
 
@@ -53,6 +53,7 @@ signal and sigaction?
     wlkin sigusr 1 o 2 mkyst3mlhomch system home mdyorin l user bach yst3mlhom kima bgha
 
 why we use usleep?
+
   7it khask dir wa7d pause bin tsifit d signals 7it ila sifti bzaf mtab3in kytlosaw o ktwsl ghi w7da machi kytsafo o kaywslo kamlin
 
 
