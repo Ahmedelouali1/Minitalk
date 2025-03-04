@@ -50,6 +50,7 @@ nafs l3iba ta f sigaction lfar9 binathom hwa anaho sigaction kt3tik info ktar , 
 signal and sigaction?
 
     signal basic function bach thandli lbehavior d process mni yreceivi signal , sigaction kadir nafs l 7aja wlkin kt3tik more info 3la chkon li sift lik signal chnahwa pid dyalo ....)
+    wlkin sigusr 1 o 2 mkyst3mlhomch system home mdyorin l user bach yst3mlhom kima bgha
 
 why we use usleep?
   7it khask dir wa7d pause bin tsifit d signals 7it ila sifti bzaf mtab3in kytlosaw o ktwsl ghi w7da machi kytsafo o kaywslo kamlin
