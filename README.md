@@ -13,14 +13,23 @@ Difference Between SIGUSR1 and SIGUSR2
 
 check_pid katchecki lina wach kayna gha + w7da o ila kan mn b3d dik + \0 y3ni ra kayna + bo7dha which is invalid o mn b3d tantchekiw wach kayn ar9am wla la 
 Input: +abc       --> Invalid
+
 Input: +1223      --> Valid
+
 Input: -315448    --> Valid
+
 Input: +          --> Invalid
+
 Input: +++84848   --> Invalid
+
 Input: --45       --> Invalid
+
 Input: +-67       --> Invalid
+
 Input: ++89       --> Invalid
+
 Input: 123        --> Valid
+
 nisanfdan invalid
 sf
 send_msg kador 3la string o katsift char by char b send_char
