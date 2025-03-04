@@ -1,6 +1,6 @@
 What is signals?
 
-  its a way of communicationg between processes  especially betweeen the kernel and other processes to notify them with an event
+  its a way of communication between processes  especially betweeen the kernel and other processes to notify them with an event
 
 pid?
 
